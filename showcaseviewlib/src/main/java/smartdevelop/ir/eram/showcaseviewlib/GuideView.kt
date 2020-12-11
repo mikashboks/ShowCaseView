@@ -7,15 +7,18 @@ import android.content.Context
 import android.content.res.Configuration
 import android.graphics.*
 import android.text.Spannable
+import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewTreeObserver
 import android.view.animation.AlphaAnimation
 import android.widget.FrameLayout
+import com.github.mmin18.widget.RealtimeBlurView
 import smartdevelop.ir.eram.showcaseviewlib.config.DismissType
 import smartdevelop.ir.eram.showcaseviewlib.config.Gravity
 import smartdevelop.ir.eram.showcaseviewlib.listener.GuideListener
+import smartdevelop.ir.eram.showcaseviewlib.utils.XMLToAttrib
 
 /**
  * Created by Mohammad Reza Eram on 20/01/2018.
@@ -503,7 +506,14 @@ class GuideView private constructor(context: Context, view: View?) : FrameLayout
         mMessageView = GuideMessageView(getContext())
         mMessageView.setPadding(messageViewPadding, messageViewPadding, messageViewPadding, messageViewPadding)
         mMessageView.setColor(Color.WHITE)
+
+        addView(
+            RealtimeBlurView(context, XMLToAttrib.get(context, R.xml.ddd)),
+            LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+        )
+
         addView(mMessageView, LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT))
+
         setMessageLocation(resolveMessageViewLocation())
         val layoutListener: ViewTreeObserver.OnGlobalLayoutListener = object : ViewTreeObserver.OnGlobalLayoutListener {
             override fun onGlobalLayout() {

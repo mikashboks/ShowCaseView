@@ -48,4 +48,5 @@ makeShowCaseView.dependsOn(clearJar, build)
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.github.mmin18:realtimeblurview:1.2.1"
 }
