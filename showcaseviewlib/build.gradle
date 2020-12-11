@@ -1,14 +1,15 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'com.github.dcendents.android-maven'
 group='com.github.mikashboks'
 android {
-    compileSdkVersion 26
-
-
+    compileSdkVersion 30
 
     defaultConfig {
-        minSdkVersion 11
-        targetSdkVersion 26
+        minSdkVersion 21
+        targetSdkVersion 30
         versionCode 2
         versionName "1.1"
 
@@ -23,6 +24,14 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
 }
 
 task makeShowCaseView(type: Copy) {
@@ -39,6 +48,4 @@ makeShowCaseView.dependsOn(clearJar, build)
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
-
 }

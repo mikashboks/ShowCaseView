@@ -1,14 +1,14 @@
-package smartdevelop.ir.eram.showcaseviewlib;
+package smartdevelop.ir.eram.showcaseviewlib
 
-import android.graphics.Path;
-import android.graphics.RectF;
+import android.graphics.Path
+import android.graphics.RectF
 
-public interface Targetable {
+interface TargetAble {
     /**
      * This path will be used when drawing the guide.
      * @return The path that will be drawn.
      */
-    Path guidePath();
+    fun guidePath(): Path?
 
     /**
      * This rect is used when displaying the guide message.
@@ -16,5 +16,5 @@ public interface Targetable {
      * be a square that contains the circle inside of it.
      * @return The rect that will used for positioning guide message.
      */
-    RectF boundingRect();
+    fun boundingRect(): RectF?
 }
