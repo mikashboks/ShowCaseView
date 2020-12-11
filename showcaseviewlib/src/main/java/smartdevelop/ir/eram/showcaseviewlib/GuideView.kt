@@ -234,10 +234,6 @@ class GuideView private constructor(context: Context, view: View?) : FrameLayout
         mMessageView.setContentText(str)
     }
 
-    fun setContentVisible(value: Boolean) {
-        mMessageView.setContentVisible(value)
-    }
-
     fun setContentSpan(span: Spannable?) {
         mMessageView.setContentSpan(span)
     }

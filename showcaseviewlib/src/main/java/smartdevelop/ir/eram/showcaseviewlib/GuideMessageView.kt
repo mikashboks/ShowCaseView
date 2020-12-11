@@ -29,7 +29,7 @@ internal class GuideMessageView(context: Context) : LinearLayout(context) {
         mTitleTextView.text = title
     }
 
-    fun setContentVisible(value: Boolean) {
+    private fun setContentVisible(value: Boolean) {
         if (value) {
             mContentTextView.visibility = View.VISIBLE
             mTitleTextView.setPadding(padding, padding, padding, paddingBetween)
